@@ -9,47 +9,86 @@
 <body>
     <div class="wrapper">
         <main class="main-container">
+            <!-- Left Visual Section -->
             <section class="visual-section">
-                <img src="instagram-logo.png" alt="Instagram" class="insta-logo">
-                <h2 class="tagline">Посмотрите, какими моментами из жизни поделились ваши близкие друзья.</h2>
-                <div class="image-stack">
-                    <img src="phones-mockup.png" alt="Content Preview" class="mockup">
+                <div class="visual-content">
+                    <div class="insta-logo-container">
+                        <svg aria-label="Instagram" class="insta-logo-svg" color="rgb(255, 255, 255)" fill="rgb(255, 255, 255)" height="80" role="img" viewBox="0 0 440 440" width="80">
+                            <path d="M220 95.5c40.5 0 45.3.2 61.4.9 14.8.7 22.9 3.2 28.3 5.3 7.1 2.7 12.1 6 17.5 11.4 5.3 5.3 8.6 10.4 11.3 17.5 2.1 5.3 4.5 13.4 5.2 28.2.7 16.1.9 20.9.9 61.4s-.2 45.3-.9 61.4c-.7 14.8-3.1 22.9-5.2 28.2-2.7 7.1-6 12.2-11.3 17.5-5.3 5.3-10.4 8.6-17.5 11.3-5.3 2.1-13.4 4.5-28.2 5.2-16.1.7-20.9.9-61.4.9s-45.3-.2-61.4-.9c-14.8-.7-22.9-3.2-28.2-5.2-7.1-2.7-12.2-6-17.5-11.3-5.3-5.3-8.6-10.4-11.3-17.5-2.1-5.3-4.5-13.4-5.2-28.2-.7-16.1-.9-20.9-.9-61.4s.2-45.3.9-61.4c.7-14.8 3.2-22.9 5.2-28.2 2.7-7.1 6-12.2 11.4-17.5 5.3-5.3 10.4-8.6 17.5-11.3 5.3-2.1 13.4-4.5 28.2-5.2 16.1-.8 20.9-.9 61.4-.9m0-31.5c-41.2 0-46.4.2-62.6 1-16.2.7-27.2 3.3-36.9 7.1-10 3.9-18.4 9-26.9 17.5-8.5 8.5-13.6 16.9-17.5 26.9-3.8 9.7-6.4 20.7-7.1 36.9-.8 16.2-1 21.4-1 62.6s.2 46.4 1 62.6c.7 16.2 3.3 27.2 7.1 36.9 3.9 10 9 18.4 17.5 26.9 8.5 8.5 16.9 13.6 26.9 17.5 9.7 3.8 20.7 6.4 36.9 7.1 16.2.8 21.4 1 62.6 1s46.4-.2 62.6-1c16.2-.7 27.2-3.3 36.9-7.1 10-3.9 18.4-9 26.9-17.5 8.5-8.5 13.6-16.9 17.5-26.9 3.8-9.7 6.4-20.7 7.1-36.9.8-16.2 1-21.4 1-62.6s-.2-46.4-1-62.6c-.7-16.2-3.3-27.2-7.1-36.9-3.9-10-9-18.4-17.5-26.9-8.5-8.5-16.9-13.6-26.9-17.5-9.7-3.8-20.7-6.4-36.9-7.1-16.2-.8-21.4-1-62.6-1z"></path>
+                            <path d="M220 142.5c-42.8 0-77.5 34.7-77.5 77.5s34.7 77.5 77.5 77.5 77.5-34.7 77.5-77.5-34.7-77.5-77.5-77.5m0 123.5c-25.4 0-46-20.6-46-46s20.6-46 46-46 46 20.6 46 46-20.6 46-46 46"></path>
+                            <path d="M308.7 149.3c0 9.1-7.4 16.5-16.5 16.5s-16.5-7.4-16.5-16.5 7.4-16.5 16.5-16.5 16.5 7.4 16.5 16.5"></path>
+                        </svg>
+                    </div>
+                    <h2 class="tagline">Посмотрите, какими моментами из жизни поделились ваши близкие друзья.</h2>
+                    <div class="collage-container">
+                        <!-- We use the generated mockup image here -->
+                        <img src="../../.gemini/antigravity/brain/79360bf3-c7c7-42b1-a2cf-2b9122f98c31/instagram_collage_mockup_1769967303412.png" alt="Instagram content collage" class="collage-image">
+                    </div>
                 </div>
             </section>
 
+            <!-- Right Login Section -->
             <section class="login-section">
                 <div class="login-box">
-                    <h3>Войти в Instagram</h3>
-                    <form>
-                        <input type="text" placeholder="Имя пользователя, номер мобильного телефона или электронны...">
-                        <input type="password" placeholder="Пароль">
-                        <button type="submit" class="btn-primary">Войти</button>
+                    <h1 class="login-title">Войти в Instagram</h1>
+                    <form class="login-form">
+                        <div class="input-container">
+                            <input type="text" placeholder="Имя пользователя, номер мобильного телефона или электронны..." aria-required="true" autocapitalize="off" autocorrect="off" name="username">
+                        </div>
+                        <div class="input-container">
+                            <input type="password" placeholder="Пароль" aria-required="true" autocapitalize="off" autocorrect="off" name="password">
+                        </div>
+                        <button type="submit" class="btn-login" disabled>Войти</button>
                     </form>
-                    <a href="#" class="link-forgot">Забыли пароль?</a>
                     
-                    <div class="divider"></div>
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
 
-                    <button class="btn-facebook">
-                        <span class="fb-icon">f</span> Войти через Facebook
-                    </button>
-                    <button class="btn-outline">Создать новый аккаунт</button>
-                    
-                    <div class="meta-brand">
-                        <img src="meta-logo-white.png" alt="Meta" style="height: 12px;">
+                    <div class="divider-container">
+                        <div class="btn-facebook">
+                            <span class="fb-icon-svg">
+                                <svg aria-label="Facebook" fill="currentColor" height="16" role="img" viewBox="0 0 24 24" width="16">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                                </svg>
+                            </span>
+                            <span>Войти через Facebook</span>
+                        </div>
+                        <button class="btn-create">Создать новый аккаунт</button>
+                    </div>
+
+                    <div class="meta-footer-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1280px-Meta_Platforms_Inc._logo.svg.png" alt="Meta logo" class="meta-svg">
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <ul class="footer-links">
-                <li>Meta</li><li>Информация</li><li>Блог</li><li>Вакансии</li><li>Помощь</li>
-                <li>API</li><li>Конфиденциальность</li><li>Условия</li><li>Места</li>
-                <li>Instagram Lite</li><li>Meta AI</li><li>Threads</li><li>Meta Verified</li>
-            </ul>
+            <nav class="footer-nav">
+                <ul class="footer-links">
+                    <li><a href="#">Meta</a></li>
+                    <li><a href="#">Информация</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Помощь</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Конфиденциальность</a></li>
+                    <li><a href="#">Условия</a></li>
+                    <li><a href="#">Места</a></li>
+                    <li><a href="#">Instagram Lite</a></li>
+                    <li><a href="#">Meta AI</a></li>
+                    <li><a href="#">Threads</a></li>
+                    <li><a href="#">Загрузка контактов и лица, не являющиеся пользователями</a></li>
+                    <li><a href="#">Meta Verified</a></li>
+                </ul>
+            </nav>
             <div class="footer-bottom">
-                <span>Русский ⌵</span>
-                <span>© 2026 Instagram from Meta</span>
+                <div class="language-selector">
+                    <span>Русский</span>
+                    <svg aria-label="Down chevron icon" color="rgb(168, 168, 168)" fill="rgb(168, 168, 168)" height="12" role="img" viewBox="0 0 24 24" width="12">
+                        <path d="M21 17.502a.997.997 0 0 1-.707-.293L12 8.913l-8.293 8.296a1 1 0 1 1-1.414-1.414l9-9.004a1.03 1.03 0 0 1 1.414 0l9 9.004A1 1 0 0 1 21 17.502Z"></path>
+                    </svg>
+                </div>
+                <p class="copyright">© 2026 Instagram from Meta</p>
             </div>
         </footer>
     </div>
