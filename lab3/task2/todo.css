@@ -20,8 +20,8 @@ body {
     margin-bottom: 20px;
 }
 
-input {
-    flex-grow: 1;
+#todo-input {
+    flex: 1;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -36,16 +36,20 @@ button {
     border-radius: 4px;
 }
 
+#todo-list {
+    padding: 0;
+}
+
 li {
     list-style: none;
     display: flex;
     align-items: center;
+    gap: 10px;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
 }
 
-/* The "Done" state styling */
-.completed {
+li.completed span {
     text-decoration: line-through;
     color: #888;
 }
@@ -53,5 +57,5 @@ li {
 .delete-btn {
     margin-left: auto;
     background-color: #dc3545;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
