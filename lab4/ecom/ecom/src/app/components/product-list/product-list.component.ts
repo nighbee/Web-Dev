@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { Product } from '../../models/product.model';
 import { PRODUCTS } from '../../data/products';
+import { FavoritesService } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-product-list',
@@ -12,4 +13,12 @@ import { PRODUCTS } from '../../data/products';
 })
 export class ProductListComponent {
   products: Product[] = PRODUCTS;
+  favorites: Product[] = [];
+
+  constructor(public favoritesService: FavoritesService) {
+    // Subscribe to favorites changes
+    this.favoritesService.favorites$.subscribe(favs => {
+      this.favorites = favs;
+    });
+  }
 }

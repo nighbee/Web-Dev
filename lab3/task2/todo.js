@@ -1,6 +1,14 @@
 const input = document.getElementById('todo-input');
 const addBtn = document.getElementById('add-btn');
 const todoList = document.getElementById('todo-list');
+const taskCounter = document.getElementById('task-counter');
+
+// Update task counter function
+function updateTaskCount() {
+    const totalTasks = todoList.querySelectorAll('li').length;
+    const completedTasks = todoList.querySelectorAll('li.completed').length;
+    taskCounter.textContent = `Total: ${totalTasks} | Completed: ${completedTasks}`;
+}
 
 // Add task function
 function addTask() {
@@ -11,7 +19,7 @@ function addTask() {
         return;
     }
 
-    // Create task item using template literal
+    // Create task item using li 
     const li = document.createElement('li');
     li.innerHTML = `
         <input type="checkbox">
@@ -21,19 +29,24 @@ function addTask() {
     
     todoList.appendChild(li);
     input.value = "";
+    updateTaskCount();
 }
 
-// Event delegation for checkbox and delete button
 todoList.addEventListener('click', (e) => {
     const li = e.target.closest('li');
     
     if (e.target.type === 'checkbox') {
         li.classList.toggle('completed');
+        updateTaskCount();
     } else if (e.target.classList.contains('delete-btn')) {
         li.remove();
+        updateTaskCount();
     }
 });
 
-// Add task on button click or Enter key
+
 addBtn.addEventListener('click', addTask);
 input.addEventListener('keypress', (e) => e.key === 'Enter' && addTask());
+
+// Initialize counter on page load
+updateTaskCount();

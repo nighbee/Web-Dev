@@ -2,11 +2,14 @@
   <!-- Image Gallery -->
   <div class="gallery">
     <div class="main-image-container">
-      <img [src]="currentImage" [alt]="product.name" class="main-image" />
+      <button class="favorite-btn" (click)="toggleFavorite()" [class.favorited]="isFavorited" aria-label="Add to favorites">
+        <span>{{ isFavorited ? '♥' : '♡' }}</span>
+      </button>
+      <img [src]="currentImage" [alt]="product.name" class="main-image" alt="image" />
       <button
         class="nav-btn prev"
         (click)="previousImage()"
-        aria-label="Previous image"
+        aria-label="Previous image" alt="text" 
       >
         <span>‹</span>
       </button>
@@ -25,7 +28,7 @@
         [alt]="product.name + ' thumbnail ' + (i + 1)"
         [class.active]="i === currentImageIndex"
         (click)="selectImage(i)"
-        class="thumbnail"
+        class="thumbnail" alt="text"
       />
     </div>
   </div>

@@ -1,172 +1,167 @@
 import { Product } from '../models/product.model';
 
 export const PRODUCTS: Product[] = [
+  // Smartphones
   {
     id: 1,
-    name: 'Apple iPhone 15 Pro Max 256GB',
-    description: 'Флагманский смартфон с титановым корпусом, чипом A17 Pro и улучшенной камерой. Поддержка 5G и быстрая зарядка.',
-    price: 649990,
-    rating: 4.8,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h1a/h1c/67395803029534/apple-iphone-15-pro-max-256gb-goluboj-titan-106498602-1-Container.jpg',
+    name: 'Смартфон Apple iPhone 17 Pro 256GB оранжевый',
+    category: 'Смартфоны',
+    description: 'Флагманский смартфон с мощным чипом A19 Pro, экраном OLED Super Retina XDR 6.3", тройной камерой 48MP и поддержкой 5G. Идеален для профессионалов и любителей качественной фотографии.',
+    price: 763903,
+    rating: 4.9,
+    reviewCount: 937,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p18/p96/64168413.png?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h1a/h1c/67395803029534/apple-iphone-15-pro-max-256gb-goluboj-titan-106498602-1-Container.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h5f/h5e/67395803095070/apple-iphone-15-pro-max-256gb-goluboj-titan-106498602-2-Container.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h93/h5d/67395803160606/apple-iphone-15-pro-max-256gb-goluboj-titan-106498602-3-Container.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p18/p96/64168413.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p18/p96/64168413.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p18/p96/64168413.png?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/apple-iphone-15-pro-max-256gb-goluboi-titan-106498602/'
+    link: 'https://kaspi.kz/shop/p/apple-iphone-17-pro-256gb-oranzhevyi-145467625/?c=750000000'
   },
   {
     id: 2,
-    name: 'Samsung Galaxy S24 Ultra 256GB',
-    description: 'Премиальный смартфон с S Pen, мощным процессором Snapdragon 8 Gen 3 и камерой 200MP. Идеален для профессионалов.',
-    price: 589990,
-    rating: 4.7,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h3f/h3e/114854619013150/samsung-galaxy-s24-ultra-256gb-cernyj-108088859-1.jpg',
+    name: 'Смартфон Redmi A5 4 ГБ/128 ГБ черный',
+    category: 'Смартфоны',
+    description: 'Мощный смартфон с процессором Unisoc T7250, экраном 6.88" IPS, емкой батареей 5200 мАч и основной камерой 32MP. Идеален для повседневного использования и развлечений.',
+    price: 49990,
+    rating: 4.9,
+    reviewCount: 1135,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p27/p8f/67214824.png?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h3f/h3e/114854619013150/samsung-galaxy-s24-ultra-256gb-cernyj-108088859-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h73/h3d/114854619078686/samsung-galaxy-s24-ultra-256gb-cernyj-108088859-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/ha7/h3c/114854619144222/samsung-galaxy-s24-ultra-256gb-cernyj-108088859-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p27/p8f/67214824.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p27/p8f/67214824.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p27/p8f/67214824.png?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/samsung-galaxy-s24-ultra-256gb-chernyi-108088859/'
+    link: 'https://kaspi.kz/shop/p/redmi-a5-4-gb-128-gb-chernyi-137034687/?c=750000000'
   },
   {
     id: 3,
-    name: 'Apple MacBook Air 13 M2 256GB',
-    description: 'Ультратонкий ноутбук с чипом M2, 13.6" Liquid Retina дисплеем и до 18 часов автономной работы. Идеален для работы и учебы.',
-    price: 599990,
+    name: 'Смартфон Samsung Galaxy A07 6 ГБ/128 ГБ лавандовый',
+    category: 'Смартфоны',
+    description: 'Универсальный смартфон с 6 ГБ RAM, 128 ГБ памяти, батареей 5000 мАч и экраном большого размера. Подходит для работы, развлечений и творчества.',
+    price: 66666,
     rating: 4.9,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h0f/h0e/67108679827486/apple-macbook-air-13-m2-256gb-2022-polnoc-104722643-1.jpg',
+    reviewCount: 541,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p0d/pdb/61291709.jpg?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h0f/h0e/67108679827486/apple-macbook-air-13-m2-256gb-2022-polnoc-104722643-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h43/h0d/67108679893022/apple-macbook-air-13-m2-256gb-2022-polnoc-104722643-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h77/h0c/67108679958558/apple-macbook-air-13-m2-256gb-2022-polnoc-104722643-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p0d/pdb/61291709.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p0d/pdb/61291709.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p0d/pdb/61291709.jpg?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/apple-macbook-air-13-m2-256gb-2022-polnoch-104722643/'
+    link: 'https://kaspi.kz/shop/p/samsung-galaxy-a07-6-gb-128-gb-lavandovyi-144817894/?c=750000000'
   },
+  // Headphones
   {
     id: 4,
-    name: 'Sony PlayStation 5 Slim',
-    description: 'Игровая консоль нового поколения с поддержкой 4K и ray tracing. Включает беспроводной контроллер DualSense.',
-    price: 329990,
-    rating: 4.8,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h8a/h89/114854619275294/sony-playstation-5-slim-belyj-108088861-1.jpg',
+    name: 'Наушники WIWU Earbuds 303 белый',
+    category: 'Наушники',
+    description: 'Универсальные наушники с USB Type-C разъемом, встроенным микрофоном и отличной звукоизоляцией. Идеальны для музыки, видео и звонков.',
+    price: 528,
+    rating: 4.4,
+    reviewCount: 404,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p01/pf1/9210783.png?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h8a/h89/114854619275294/sony-playstation-5-slim-belyj-108088861-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hbe/h88/114854619340830/sony-playstation-5-slim-belyj-108088861-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hf2/h87/114854619406366/sony-playstation-5-slim-belyj-108088861-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p01/pf1/9210783.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p01/pf1/9210783.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p01/pf1/9210783.png?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/sony-playstation-5-slim-belyi-108088861/'
+    link: 'https://kaspi.kz/shop/p/naushniki-wiwu-earbuds-303-belyi-118287281/?c=750000000'
   },
   {
     id: 5,
-    name: 'Apple AirPods Pro 2nd Gen',
-    description: 'Беспроводные наушники с активным шумоподавлением, пространственным звуком и до 6 часов прослушивания.',
-    price: 139990,
-    rating: 4.7,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h0a/h09/67108680024094/apple-airpods-pro-2nd-generation-belyj-104722645-1.jpg',
+    name: 'Наушники Apple EarPods USB-C белый',
+    category: 'Наушники',
+    description: 'Классические наушники Apple с USB Type-C, встроенным микрофоном и универсальной совместимостью с iPhone и Android. Удобны для повседневного использования.',
+    price: 10673,
+    rating: 4.9,
+    reviewCount: 3150,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p44/p27/108964604.png?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h0a/h09/67108680024094/apple-airpods-pro-2nd-generation-belyj-104722645-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h3e/h08/67108680089630/apple-airpods-pro-2nd-generation-belyj-104722645-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h72/h07/67108680155166/apple-airpods-pro-2nd-generation-belyj-104722645-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p44/p27/108964604.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p44/p27/108964604.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p44/p27/108964604.png?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/apple-airpods-pro-2nd-generation-belyi-104722645/'
+    link: 'https://kaspi.kz/shop/p/naushniki-apple-earpods-usb-c-belyi-114086432/?c=750000000'
   },
   {
     id: 6,
-    name: 'Dyson V15 Detect Absolute',
-    description: 'Беспроводной пылесос с лазерным обнаружением пыли и мощным всасыванием. До 60 минут работы без подзарядки.',
-    price: 399990,
-    rating: 4.6,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h5a/h59/67108680220702/dyson-v15-detect-absolute-zolotoj-104722647-1.jpg',
+    name: 'Наушники JASPER JS70 бежевый',
+    category: 'Наушники',
+    description: 'Беспроводные наушники с Bluetooth, временем работы до 6 часов, глубокими басами и четкими высокими частотами. Идеальны для активного образа жизни.',
+    price: 3490,
+    rating: 5.0,
+    reviewCount: 229,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/pa8/p4f/66068562.jpg?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h5a/h59/67108680220702/dyson-v15-detect-absolute-zolotoj-104722647-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h8e/h58/67108680286238/dyson-v15-detect-absolute-zolotoj-104722647-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hc2/h57/67108680351774/dyson-v15-detect-absolute-zolotoj-104722647-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/pa8/p4f/66068562.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/pa8/p4f/66068562.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/pa8/p4f/66068562.jpg?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/dyson-v15-detect-absolute-zolotoi-104722647/'
+    link: 'https://kaspi.kz/shop/p/naushniki-jasper-js70-bezhevyi-146025818/?c=750000000'
   },
+  // Smart Watches
   {
     id: 7,
-    name: 'Samsung 55" QLED 4K Smart TV',
-    description: 'Премиальный телевизор с технологией Quantum Dot, поддержкой HDR10+ и частотой обновления 120Hz для плавного изображения.',
-    price: 449990,
-    rating: 4.8,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hf6/hf5/114854619471902/samsung-qe55q60dauxxc-55-cernyj-108088863-1.jpg',
+    name: 'Смарт-часы YUNTEKO DMi50 графитовый-черный',
+    category: 'Смарт-часы',
+    description: 'Привлекательные смарт-часы с батареей 400mAh, работающей 8-12 дней, водозащитой IP68 и стильным дизайном. Идеальны для активных людей.',
+    price: 29888,
+    rating: 4.9,
+    reviewCount: 598,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p64/p52/58332179.jpg?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hf6/hf5/114854619471902/samsung-qe55q60dauxxc-55-cernyj-108088863-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h2a/hf4/114854619537438/samsung-qe55q60dauxxc-55-cernyj-108088863-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h5e/hf3/114854619602974/samsung-qe55q60dauxxc-55-cernyj-108088863-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p64/p52/58332179.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p64/p52/58332179.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p64/p52/58332179.jpg?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/samsung-qe55q60dauxxc-55-chernyi-108088863/'
+    link: 'https://kaspi.kz/shop/p/yunteko-dmi50-grafitovyi-chernyi-112844424/?c=750000000'
   },
   {
     id: 8,
-    name: 'Apple Watch Series 9 GPS 45mm',
-    description: 'Умные часы с ярким дисплеем Always-On, датчиками здоровья и фитнес-трекингом. Водонепроницаемые до 50м.',
-    price: 249990,
-    rating: 4.7,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h92/h91/114854619668510/apple-watch-series-9-gps-45mm-cernyj-108088865-1.jpg',
+    name: 'Смарт-часы YAMI i1 42 мм золотистый',
+    category: 'Смарт-часы',
+    description: 'Инновационные смарт-часы с 42mm экраном, функциями фитнес-браслета, мониторингом здоровья и двумя ремешками в комплекте. Совместимы с Android и iOS.',
+    price: 19990,
+    rating: 4.9,
+    reviewCount: 663,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p51/pd4/9015777.jpg?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h92/h91/114854619668510/apple-watch-series-9-gps-45mm-cernyj-108088865-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hc6/h90/114854619734046/apple-watch-series-9-gps-45mm-cernyj-108088865-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hfa/h8f/114854619799582/apple-watch-series-9-gps-45mm-cernyj-108088865-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p51/pd4/9015777.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p51/pd4/9015777.jpg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p51/pd4/9015777.jpg?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/apple-watch-series-9-gps-45mm-chernyi-108088865/'
+    link: 'https://kaspi.kz/shop/p/yami-i1-42-mm-zolotistyi-zolotistyi-112674629/?c=750000000'
   },
   {
     id: 9,
-    name: 'Canon EOS R6 Mark II Body',
-    description: 'Профессиональная беззеркальная камера с 24.2MP сенсором, 4K видео 60fps и продвинутым автофокусом.',
-    price: 1299990,
-    rating: 4.9,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h2e/h2d/114854619865118/canon-eos-r6-mark-ii-body-cernyj-108088867-1.jpg',
+    name: 'Смарт-часы ARTEO AS10 41 мм розовый',
+    category: 'Смарт-часы',
+    description: 'Стильные смарт-часы с современным дизайном, мониторингом здоровья, долговечной батареей и уведомлениями в реальном времени. Идеальны для активных и современных людей.',
+    price: 9990,
+    rating: 5.0,
+    reviewCount: 477,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p0c/p4d/82291138.png?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h2e/h2d/114854619865118/canon-eos-r6-mark-ii-body-cernyj-108088867-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h62/h2c/114854619930654/canon-eos-r6-mark-ii-body-cernyj-108088867-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h96/h2b/114854619996190/canon-eos-r6-mark-ii-body-cernyj-108088867-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p0c/p4d/82291138.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p0c/p4d/82291138.png?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p0c/p4d/82291138.png?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/canon-eos-r6-mark-ii-body-chernyi-108088867/'
+    link: 'https://kaspi.kz/shop/p/arteo-as10-41-mm-rozovyi-129639580/?c=750000000'
   },
   {
     id: 10,
-    name: 'Xiaomi Robot Vacuum S10+',
-    description: 'Робот-пылесос с автоочисткой, лазерной навигацией и мощностью всасывания 4000Pa. Управление через приложение.',
-    price: 189990,
-    rating: 4.5,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hca/hc9/114854620061726/xiaomi-robot-vacuum-s10-belyj-108088869-1.jpg',
+    name: 'Смарт-часы NOLIMIT REDLINE черный',
+    category: 'Смарт-часы',
+    description: 'Надежные смарт-часы с AMOLED дисплеем 1.43", водозащитой IP67, GPS-трекингом и мониторингом здоровья. Автономность до 20 дней в режиме ожидания.',
+    price: 29900,
+    rating: 5.0, 
+    reviewCount: 267,
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/p6d/p33/88870604.jpeg?format=gallery-large',
     images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hca/hc9/114854620061726/xiaomi-robot-vacuum-s10-belyj-108088869-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hfe/hc8/114854620127262/xiaomi-robot-vacuum-s10-belyj-108088869-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h32/hc7/114854620192798/xiaomi-robot-vacuum-s10-belyj-108088869-3.jpg'
+      'https://resources.cdn-kaspi.kz/img/m/p/p6d/p33/88870604.jpeg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p6d/p33/88870604.jpeg?format=gallery-large',
+      'https://resources.cdn-kaspi.kz/img/m/p/p6d/p33/88870604.jpeg?format=gallery-large'
     ],
-    link: 'https://kaspi.kz/shop/p/xiaomi-robot-vacuum-s10-belyi-108088869/'
-  },
-  {
-    id: 11,
-    name: 'LG OLED55C3 55" 4K Smart TV',
-    description: 'OLED телевизор с идеальным черным цветом, поддержкой Dolby Vision и webOS Smart TV. Игровой режим с HDMI 2.1.',
-    price: 699990,
-    rating: 4.9,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h66/hc5/114854620258334/lg-oled55c3psa-55-cernyj-108088871-1.jpg',
-    images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h66/hc5/114854620258334/lg-oled55c3psa-55-cernyj-108088871-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h9a/hc4/114854620323870/lg-oled55c3psa-55-cernyj-108088871-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hce/hc3/114854620389406/lg-oled55c3psa-55-cernyj-108088871-3.jpg'
-    ],
-    link: 'https://kaspi.kz/shop/p/lg-oled55c3psa-55-chernyi-108088871/'
-  },
-  {
-    id: 12,
-    name: 'DJI Mini 3 Pro Fly More Combo',
-    description: 'Компактный дрон с 4K камерой, 34 минуты полета и интеллектуальными режимами съемки. Складная конструкция.',
-    price: 379990,
-    rating: 4.8,
-    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h02/hc1/114854620454942/dji-mini-3-pro-fly-more-combo-seryi-108088873-1.jpg',
-    images: [
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h02/hc1/114854620454942/dji-mini-3-pro-fly-more-combo-seryi-108088873-1.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h36/hc0/114854620520478/dji-mini-3-pro-fly-more-combo-seryi-108088873-2.jpg',
-      'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h6a/hbf/114854620586014/dji-mini-3-pro-fly-more-combo-seryi-108088873-3.jpg'
-    ],
-    link: 'https://kaspi.kz/shop/p/dji-mini-3-pro-fly-more-combo-seryi-108088873/'
+    link: 'https://kaspi.kz/shop/p/smart-chasy-nolimit-redline-chernyi-141361891/?c=750000000'
   }
 ];

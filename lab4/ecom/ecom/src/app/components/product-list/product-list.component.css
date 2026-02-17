@@ -1,80 +1,67 @@
 .product-list-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
-  padding: 40px 20px;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 50px;
-  animation: fadeInDown 0.8s ease;
-}
-
-.header h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 10px 0;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  letter-spacing: -1px;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
-  font-weight: 300;
+  background: #f8f8f8;
+  padding: 30px 20px;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto 60px;
+}
+
+/* Favorites Section */
+.favorites-section {
   max-width: 1400px;
   margin: 0 auto;
-  animation: fadeInUp 0.8s ease;
+  padding: 40px 0;
+  border-top: 2px solid #ddd;
 }
 
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.favorites-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 25px 0;
+  padding-left: 20px;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Empty Favorites Message */
+.empty-favorites {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
   .product-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .product-list-container {
     padding: 20px 15px;
+  }
+
+  .favorites-section h2 {
+    font-size: 1.5rem;
+    padding-left: 0;
   }
 }
 
@@ -82,10 +69,18 @@
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .favorites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 1025px) {
   .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .favorites-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }

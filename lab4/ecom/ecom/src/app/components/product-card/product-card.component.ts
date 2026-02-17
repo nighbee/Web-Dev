@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
+import { FavoritesService } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-product-card',
@@ -11,6 +12,13 @@ import { Product } from '../../models/product.model';
 export class ProductCardComponent {
   @Input() product!: Product;
   currentImageIndex = 0;
+  isFavorited = false;
+
+  constructor(private favoritesService: FavoritesService) {}
+
+  ngOnInit(): void {
+    this.isFavorited = this.favoritesService.isFavorite(this.product.id);
+  }
 
   get currentImage(): string {
     return this.product.images[this.currentImageIndex];
@@ -28,6 +36,11 @@ export class ProductCardComponent {
     this.currentImageIndex = this.currentImageIndex === 0 
       ? this.product.images.length - 1 
       : this.currentImageIndex - 1;
+  }
+
+  toggleFavorite(): void {
+    this.favoritesService.toggleFavorite(this.product);
+    this.isFavorited = this.favoritesService.isFavorite(this.product.id);
   }
 
   shareOnWhatsApp(): void {
