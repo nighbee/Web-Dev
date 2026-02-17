@@ -56,7 +56,7 @@ export class FavoritesService {
     }
   }
 
-  // Load favorites from localStorage
+  // Load favorite
   private loadFavorites(): void {
     if (this.isBrowser()) {
       const stored = localStorage.getItem('favorites');
