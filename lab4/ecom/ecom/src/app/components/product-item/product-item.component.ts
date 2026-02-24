@@ -25,7 +25,7 @@ export class ProductItemComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['product'] && !changes['product'].firstChange) {y)
+    if (changes['product'] && !changes['product'].firstChange) {
       this.currentImageIndex.set(0);
       this.initializeProduct();
     }

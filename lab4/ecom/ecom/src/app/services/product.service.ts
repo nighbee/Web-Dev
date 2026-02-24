@@ -14,9 +14,7 @@ export class ProductService {
     { id: 4, name: 'Laptops' }
   ];
 
-  private productsSignal = signal<Product[]>([
-    // Smartphones (categoryId: 1) - 5 products
-    {
+  private productsSignal = signal<Product[]>([    {
       id: 1,
       name: 'Смартфон Apple iPhone 17 Pro 256GB оранжевый',
       description: 'Флагманский смартфон с мощным чипом A19 Pro, экраном OLED Super Retina XDR 6.3", тройной камерой 48MP и поддержкой 5G.',
@@ -97,7 +95,7 @@ export class ProductService {
       likes: 0
     },
 
-    // Headphones (categoryId: 2) - 5 products
+   
     {
       id: 6,
       name: 'Наушники WIWU Earbuds 303 белый',
@@ -179,7 +177,7 @@ export class ProductService {
       likes: 0
     },
 
-    // Smart Watches (categoryId: 3) - 4 products
+
     {
       id: 11,
       name: 'Смарт-часы YUNTEKO DMi50 графитовый-черный',
@@ -261,7 +259,6 @@ export class ProductService {
       likes: 0
     },
 
-    // Laptops (categoryId: 4) - 5 products
     {
       id: 15,
       name: 'Ноутбук Castom E157D 15.6" / 16 Гб / SSD 1000 Гб / Win 11',
@@ -352,7 +349,6 @@ export class ProductService {
 
   getProductsByCategory(categoryId: number): Product[] {
     if (categoryId === 0) {
-      // "All" category - return all products
       return this.productsSignal();
     }
     return this.productsSignal().filter(p => p.categoryId === categoryId);
