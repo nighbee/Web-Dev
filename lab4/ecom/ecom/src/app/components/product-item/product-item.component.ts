@@ -25,8 +25,7 @@ export class ProductItemComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['product'] && !changes['product'].firstChange) {
-      // Product changed (e.g., navigated to a different category)
+    if (changes['product'] && !changes['product'].firstChange) {y)
       this.currentImageIndex.set(0);
       this.initializeProduct();
     }
