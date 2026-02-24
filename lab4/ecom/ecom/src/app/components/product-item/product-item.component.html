@@ -1,11 +1,10 @@
 <div class="product-card">
-  <!-- Image Gallery -->
   <div class="gallery">
     <div class="main-image-container">
       <button class="favorite-btn" (click)="toggleFavorite()" [class.favorited]="hasLiked()" aria-label="Like this product">
         <span>{{ hasLiked() ? '♥' : '♡' }}</span>
       </button>
-      <img [src]="currentImage" [alt]="product.name" class="main-image" alt="image" />
+      <img [src]="currentImage" [alt]="product().name" class="main-image" alt="image" />
       <button
         class="nav-btn prev"
         (click)="previousImage()"
@@ -22,54 +21,60 @@
       </button>
     </div>
     <div class="thumbnails">
-      <img
-        *ngFor="let img of product.images; let i = index"
-        [src]="img"
-        [alt]="product.name + ' thumbnail ' + (i + 1)"
-        [class.active]="i === currentImageIndex"
-        (click)="selectImage(i)"
-        class="thumbnail" alt="text"
-      />
+      @for (img of product().images; track $index) {
+        <img
+          [src]="img"
+          [alt]="product().name + ' thumbnail ' + ($index + 1)"
+          [class.active]="$index === currentImageIndex()"
+          (click)="selectImage($index)"
+          class="thumbnail" alt="text"
+        />
+      }
     </div>
   </div>
 
-  <!-- Product Info -->
   <div class="product-info">
-    <h3 class="product-name">{{ product.name }}</h3>
-    <p class="product-description">{{ product.description }}</p>
+    <h3 class="product-name">{{ product().name }}</h3>
+    <p class="product-description">{{ product().description }}</p>
 
-    <!-- Rating -->
     <div class="rating">
       <div class="stars">
-        <span
-          *ngFor="let filled of getStarArray()"
-          [class.filled]="filled"
-          class="star"
+        @for (filled of getStarArray(); track $index) {
+          <span
+            [class.filled]="filled"
+            class="star"
           >★</span
-        >
+          >
+        }
       </div>
-      <span class="rating-value">{{ product.rating }}</span>
+      <span class="rating-value">{{ product().rating }}</span>
     </div>
 
-    <!-- Likes Count -->
     <div class="likes">
       <span class="heart">❤</span>
       <span class="likes-count">{{ likeCount() }}</span>
     </div>
 
-    <!-- Price -->
-    <div class="price">{{ product.price | number: "1.0-0" }} ₸</div>
+    <div class="price">{{ product().price | number: "1.0-0" }} ₸</div>
 
-    <!-- Actions -->
     <div class="actions">
       <a
-        [href]="product.link"
+        [href]="product().link"
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary"
       >
         View on Kaspi.kz
       </a>
+      
+      <button
+        (click)="delete()"
+        class="btn btn-delete"
+        aria-label="Delete this product"
+      >
+        <span class="icon">🗑️</span> Delete
+      </button>
+
       <div class="share-buttons">
         <button
           (click)="shareOnWhatsApp()"

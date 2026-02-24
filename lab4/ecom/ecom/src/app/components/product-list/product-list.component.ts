@@ -1,24 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductItemComponent } from '../product-item/product-item.component';
 import { Product } from '../../models/product.model';
-import { PRODUCTS } from '../../data/products';
-import { FavoritesService } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-product-list',
-  imports: [CommonModule, ProductCardComponent],
+  imports: [CommonModule, ProductItemComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  products: Product[] = PRODUCTS;
-  favorites: Product[] = [];
+  products = input<Product[]>([]);
+  deleteProduct = output<number>();
 
-  constructor(public favoritesService: FavoritesService) {
-    // Subscribe to favorites changes
-    this.favoritesService.favorites$.subscribe(favs => {
-      this.favorites = favs;
-    });
+  onDeleteProduct(productId: number): void {
+    this.deleteProduct.emit(productId);
   }
 }

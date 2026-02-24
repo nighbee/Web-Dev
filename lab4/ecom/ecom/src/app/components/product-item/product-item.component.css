@@ -223,6 +223,32 @@
   background: #555;
 }
 
+.btn-like {
+  background: #ff6b6b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.btn-like:hover {
+  background: #ff5252;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
 .share-buttons {
   display: flex;
   gap: 6px;
