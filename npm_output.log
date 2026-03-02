@@ -1,0 +1,17 @@
+
+> album-browser@0.0.0 start
+> ng serve
+
+- Building...
+
+Initial chunk files | Names         |  Raw size
+polyfills.js        | polyfills     |  88.09 kB |
+main.js             | main          |  35.65 kB |
+styles.css          | styles        |  95 bytes |
+
+                    | Initial total | 123.83 kB
+
+Application bundle generation complete. [2.700 seconds]
+
+Watch mode enabled. Watching for file changes...
+  ➜  Local:   http://localhost:4200/
