@@ -1,0 +1,51 @@
+<div class="detail-container">
+  <div class="header">
+    <button class="btn back-btn" routerLink="/albums">← Back to Albums</button>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    Loading album details...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && album" class="album-details card">
+    <h2>Album Details</h2>
+
+    <div class="info-group">
+      <span class="label">ID:</span>
+      <span class="value">{{ album.id }}</span>
+    </div>
+
+    <div class="info-group">
+      <span class="label">User ID:</span>
+      <span class="value">{{ album.userId }}</span>
+    </div>
+
+    <div class="edit-group">
+      <label for="title" class="label">Title:</label>
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="album.title"
+        class="title-input"
+        [disabled]="saving"
+      />
+    </div>
+
+    <div class="actions">
+      <button class="btn save-btn" (click)="saveAlbum()" [disabled]="saving">
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+      <button class="btn photos-btn" [routerLink]="['/albums', album.id, 'photos']">
+        View Photos →
+      </button>
+    </div>
+
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  </div>
+</div>

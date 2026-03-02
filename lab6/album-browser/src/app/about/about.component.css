@@ -1,0 +1,32 @@
+.about-container {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+strong {
+  color: #222;
+  display: inline-block;
+  width: 120px;
+}
