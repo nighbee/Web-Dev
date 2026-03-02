@@ -4,6 +4,7 @@
   </div>
 
   <h2>Album Photos</h2>
+  <h3 class="item-count" *ngIf="photos && !loading">Total Photos: {{ photos.length }}</h3>
 
   <div *ngIf="loading" class="loading">
     Loading photos...
