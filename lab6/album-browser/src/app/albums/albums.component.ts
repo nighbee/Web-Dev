@@ -33,15 +33,13 @@ export class AlbumsComponent implements OnInit {
   }
 
   deleteAlbum(id: number, event: Event): void {
-    event.stopPropagation(); // prevent navigation to detail view
+    event.stopPropagation(); 
     this.albumsService.deleteAlbum(id).subscribe({
       next: () => {
-        // filter out the deleted album
         this.albums = this.albums.filter(album => album.id !== id);
       },
       error: (err) => {
         console.error('Failed to delete album', err);
-        // still remove from UI as requested
         this.albums = this.albums.filter(album => album.id !== id);
       }
     });
