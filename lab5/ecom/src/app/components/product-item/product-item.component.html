@@ -1,0 +1,96 @@
+<div class="product-card">
+  <div class="gallery">
+    <div class="main-image-container">
+      <button class="favorite-btn" (click)="toggleFavorite()" [class.favorited]="hasLiked()" aria-label="Like this product">
+        <span>{{ hasLiked() ? '♥' : '♡' }}</span>
+      </button>
+      <img [src]="currentImage" [alt]="product().name" class="main-image" alt="image" />
+      <button
+        class="nav-btn prev"
+        (click)="previousImage()"
+        aria-label="Previous image" alt="text" 
+      >
+        <span>‹</span>
+      </button>
+      <button
+        class="nav-btn next"
+        (click)="nextImage()"
+        aria-label="Next image"
+      >
+        <span>›</span>
+      </button>
+    </div>
+    <div class="thumbnails">
+      @for (img of product().images; track $index) {
+        <img
+          [src]="img"
+          [alt]="product().name + ' thumbnail ' + ($index + 1)"
+          [class.active]="$index === currentImageIndex()"
+          (click)="selectImage($index)"
+          class="thumbnail" alt="text"
+        />
+      }
+    </div>
+  </div>
+
+  <div class="product-info">
+    <h3 class="product-name">{{ product().name }}</h3>
+    <p class="product-description">{{ product().description }}</p>
+
+    <div class="rating">
+      <div class="stars">
+        @for (filled of getStarArray(); track $index) {
+          <span
+            [class.filled]="filled"
+            class="star"
+          >★</span
+          >
+        }
+      </div>
+      <span class="rating-value">{{ product().rating }}</span>
+    </div>
+
+    <div class="likes">
+      <span class="heart">❤</span>
+      <span class="likes-count">{{ likeCount() }}</span>
+    </div>
+
+    <div class="price">{{ product().price | number: "1.0-0" }} ₸</div>
+
+    <div class="actions">
+      <a
+        [href]="product().link"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        View on Kaspi.kz
+      </a>
+      
+      <button
+        (click)="delete()"
+        class="btn btn-delete"
+        aria-label="Delete this product"
+      >
+        <span class="icon">🗑️</span> Delete
+      </button>
+
+      <div class="share-buttons">
+        <button
+          (click)="shareOnWhatsApp()"
+          class="btn btn-share whatsapp"
+          aria-label="Share on WhatsApp"
+        >
+          <span class="icon">📱</span> WhatsApp
+        </button>
+        <button
+          (click)="shareOnTelegram()"
+          class="btn btn-share telegram"
+          aria-label="Share on Telegram"
+        >
+          <span class="icon">✈️</span> Telegram
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
