@@ -46,7 +46,6 @@ export class AlbumsService {
         }
       }),
       catchError((err: any) => {
-        // Fallback update for dummy API
         if (this.albumsCache) {
           const index = this.albumsCache.findIndex(a => a.id === album.id);
           if (index !== -1) {

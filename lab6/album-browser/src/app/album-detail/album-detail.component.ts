@@ -38,7 +38,7 @@ export class AlbumDetailComponent implements OnInit {
   loadAlbum(id: number): void {
     this.albumsService.getAlbum(id).subscribe({
       next: (data) => {
-        this.album = { ...data }; // Create a copy
+        this.album = { ...data }; 
         this.loading = false;
       },
       error: (err) => {
@@ -64,7 +64,6 @@ export class AlbumDetailComponent implements OnInit {
       },
       error: (err) => {
         console.error('Failed to update album', err);
-        // JSONPlaceholder sometimes fails PUTs, simulate success for the UI as per instructions
         this.saving = false;
         this.successMessage = 'Album title updated locally!';
         setTimeout(() => this.successMessage = '', 3000);
