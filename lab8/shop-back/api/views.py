@@ -13,6 +13,7 @@ def serialize_product(product):
 		'is_active': product.is_active,
 		'category': product.category_id,
 		'image_url': product.image_url,
+		'link': product.link,
 	}
 
 

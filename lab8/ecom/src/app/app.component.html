@@ -19,13 +19,6 @@
   </nav>
 
   <main class="main-content">
-    <div class="category-header">
-      <h2>{{ getSelectedCategoryName() }}</h2>
-      <span class="product-count">{{ products().length }} products</span>
-    </div>
-    <app-product-list 
-      [products]="products()"
-      (deleteProduct)="onDeleteProduct($event)"
-    ></app-product-list>
+    <router-outlet></router-outlet>
   </main>
 </div>

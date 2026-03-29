@@ -219,8 +219,23 @@
   color: #fff;
 }
 
-.btn-primary:hover {
-  background: #555;
+.product-name a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.product-name a:hover {
+  color: #007bff;
+}
+
+.btn-details {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-details:hover {
+  background: #0056b3;
 }
 
 .btn-like {

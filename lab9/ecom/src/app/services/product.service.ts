@@ -11,6 +11,10 @@ interface ApiProduct {
   description: string;
   count: number;
   is_active: boolean;
+  image: string;
+  kaspi_link: string;
+  rating: number;
+  reviewCount: number;
   category: number;
 }
 
@@ -46,20 +50,26 @@ export class ProductService {
     );
   }
 
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<ApiProduct>(`${this.apiBaseUrl}/products/${id}/`).pipe(
+      map(product => this.toUiProduct(product))
+    );
+  }
+
   private toUiProduct(product: ApiProduct): Product {
     return {
       id: product.id,
       name: product.name,
       description: product.description,
       price: product.price,
-      rating: 5,
-      reviewCount: 0,
-      image: 'https://placehold.co/600x400?text=Product',
+      rating: product.rating || 0,
+      reviewCount: product.reviewCount || 0,
+      image: product.image || 'https://placehold.co/600x400?text=No+Image',
       images: [
-        'https://placehold.co/600x400?text=Product',
-        'https://placehold.co/600x400?text=Product'
+        product.image || 'https://placehold.co/600x400?text=No+Image',
+        product.image || 'https://placehold.co/600x400?text=No+Image'
       ],
-      link: '#',
+      link: product.kaspi_link || '#',
       categoryId: product.category,
       likes: 0,
     };

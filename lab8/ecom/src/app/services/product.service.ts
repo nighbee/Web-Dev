@@ -13,6 +13,7 @@ interface ApiProduct {
   is_active: boolean;
   category: number;
   image_url: string;
+  link: string;
 }
 
 interface ApiCategory {
@@ -28,6 +29,8 @@ export class ProductService {
 
   private categoriesSignal = signal<Category[]>([{ id: 0, name: 'All' }]);
   private productsSignal = signal<Product[]>([]);
+  
+  selectedCategoryId = signal<number>(0);
 
   categories = this.categoriesSignal.asReadonly();
   products = this.productsSignal.asReadonly();
@@ -60,7 +63,7 @@ export class ProductService {
         product.image_url || 'https://placehold.co/600x400?text=Product',
         product.image_url || 'https://placehold.co/600x400?text=Product'
       ],
-      link: '#',
+      link: product.link || '#',
       categoryId: product.category,
       likes: 0,
     };
@@ -79,6 +82,12 @@ export class ProductService {
 
   getCategoryById(id: number): Category | undefined {
     return this.categoriesSignal().find(c => c.id === id);
+  }
+
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<ApiProduct>(`${this.apiBaseUrl}/products/${id}/`).pipe(
+      map(product => this.toUiProduct(product))
+    );
   }
 
   likeProduct(productId: number): void {

@@ -1,31 +1,10 @@
 <div class="app-container">
   <header class="header">
-    <title class="ecom">ecom</title>
+    <title class="ecom" routerLink="/">ecom</title>
+    <nav class="main-nav">
+      <a routerLink="/" class="nav-link">Catalog</a>
+    </nav>
   </header>
 
-  <nav class="category-nav">
-    <h2>Categories</h2>
-    <div class="category-buttons">
-      @for (category of categories(); track category.id) {
-        <button 
-          class="category-btn"
-          [class.active]="selectedCategoryId() === category.id"
-          (click)="selectCategory(category.id)"
-        >
-          {{ category.name }}
-        </button>
-      }
-    </div>
-  </nav>
-
-  <main class="main-content">
-    <div class="category-header">
-      <h2>{{ getSelectedCategoryName() }}</h2>
-      <span class="product-count">{{ products().length }} products</span>
-    </div>
-    <app-product-list 
-      [products]="products()"
-      (deleteProduct)="onDeleteProduct($event)"
-    ></app-product-list>
-  </main>
+  <router-outlet></router-outlet>
 </div>

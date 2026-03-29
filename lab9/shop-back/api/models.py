@@ -15,6 +15,9 @@ class Product(models.Model):
 	count = models.IntegerField()
 	is_active = models.BooleanField(default=True)
 	image = models.URLField(max_length=500, null=True, blank=True)
+	kaspi_link = models.URLField(max_length=500, null=True, blank=True)
+	rating = models.FloatField(default=0.0)
+	reviewCount = models.IntegerField(default=0)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
 
 	def __str__(self):

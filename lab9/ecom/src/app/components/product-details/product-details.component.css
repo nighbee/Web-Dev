@@ -1,0 +1,191 @@
+.details-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.product-details-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+.back-link {
+  margin-bottom: 2rem;
+}
+
+.btn-back {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.btn-back:hover {
+  color: #333;
+}
+
+.details-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+}
+
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-name {
+  font-size: 2rem;
+  margin: 0;
+  color: #333;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  color: #ddd;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.rating-value {
+  font-weight: bold;
+  color: #333;
+}
+
+.review-count {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #e91e63;
+}
+
+.status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #fde8ef;
+  color: #e91e63;
+}
+
+.status.in-stock {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.description h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.description p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.share-section h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-share {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f5f5f5;
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.btn-share:hover {
+  background: #eee;
+}
+
+.whatsapp:hover {
+  background: #25d366;
+  color: white;
+}
+
+.telegram:hover {
+  background: #0088cc;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .details-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-name {
+    font-size: 1.5rem;
+  }
+}

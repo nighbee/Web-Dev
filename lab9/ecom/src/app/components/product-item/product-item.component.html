@@ -59,6 +59,12 @@
 
     <div class="actions">
       <a
+        [routerLink]="['/products', product().id]"
+        class="btn btn-secondary"
+      >
+        View Details
+      </a>
+      <a
         [href]="product().link"
         target="_blank"
         rel="noopener noreferrer"

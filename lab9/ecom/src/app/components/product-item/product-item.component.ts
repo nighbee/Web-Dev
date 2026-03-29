@@ -1,11 +1,12 @@
 import { Component, input, output, signal, inject, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Product } from '../../models/product.model';
 import { FavoritesService } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-product-item',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.css'
 })
