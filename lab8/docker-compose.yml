@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./shop-back
+      dockerfile: Dockerfile
+    container_name: lab8-backend
+    working_dir: /app
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./shop-back:/app
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./ecom
+      dockerfile: Dockerfile
+    container_name: lab8-frontend
+    working_dir: /app
+    command: npm run start -- --host 0.0.0.0 --port 4200
+    volumes:
+      - ./ecom:/app
+      - /app/node_modules
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend

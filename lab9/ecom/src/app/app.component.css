@@ -1,0 +1,158 @@
+.app-container {
+  min-height: 100vh;
+  background: #f8f8f8;
+}
+
+/* Header */
+.header {
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Category Navigation */
+.category-nav {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.category-nav h2 {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.category-btn {
+  padding: 12px 24px;
+  border: 2px solid #333;
+  background: #fff;
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-btn:hover {
+  background: #f0f0f0;
+}
+
+.category-btn.active {
+  background: #333;
+  color: #fff;
+}
+
+/* Main Content */
+.main-content {
+  padding: 30px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Welcome Message */
+.welcome-message {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+}
+
+.welcome-message p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Category Header */
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding: 0 10px;
+}
+
+.category-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
+
+.product-count {
+  font-size: 0.95rem;
+  color: #666;
+  background: #e0e0e0;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .category-nav {
+    padding: 15px 10px;
+  }
+
+  .category-buttons {
+    gap: 8px;
+  }
+
+  .category-btn {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+
+  .main-content {
+    padding: 20px 15px;
+  }
+
+  .welcome-message {
+    padding: 50px 20px;
+  }
+
+  .welcome-message h2 {
+    font-size: 1.4rem;
+  }
+
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .category-header h2 {
+    font-size: 1.3rem;
+  }
+}

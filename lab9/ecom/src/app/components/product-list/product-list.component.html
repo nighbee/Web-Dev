@@ -1,0 +1,16 @@
+<div class="product-list-container">
+  @if (products().length === 0) {
+    <div class="empty-message">
+      <p>No products in this category</p>
+    </div>
+  } @else {
+    <div class="product-grid">
+      @for (product of products(); track product.id) {
+        <app-product-item 
+          [product]="product"
+          (deleteProduct)="onDeleteProduct($event)">
+        </app-product-item>
+      }
+    </div>
+  }
+</div>

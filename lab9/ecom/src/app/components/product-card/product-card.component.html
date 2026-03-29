@@ -1,0 +1,91 @@
+<div class="product-card">
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <div class="main-image-container">
+      <button class="favorite-btn" (click)="toggleFavorite()" [class.favorited]="hasLiked()" aria-label="Like this product">
+        <span>{{ hasLiked() ? '♥' : '♡' }}</span>
+      </button>
+      <img [src]="currentImage" [alt]="product.name" class="main-image" alt="image" />
+      <button
+        class="nav-btn prev"
+        (click)="previousImage()"
+        aria-label="Previous image" alt="text" 
+      >
+        <span>‹</span>
+      </button>
+      <button
+        class="nav-btn next"
+        (click)="nextImage()"
+        aria-label="Next image"
+      >
+        <span>›</span>
+      </button>
+    </div>
+    <div class="thumbnails">
+      <img
+        *ngFor="let img of product.images; let i = index"
+        [src]="img"
+        [alt]="product.name + ' thumbnail ' + (i + 1)"
+        [class.active]="i === currentImageIndex"
+        (click)="selectImage(i)"
+        class="thumbnail" alt="text"
+      />
+    </div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-info">
+    <h3 class="product-name">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description }}</p>
+
+    <!-- Rating -->
+    <div class="rating">
+      <div class="stars">
+        <span
+          *ngFor="let filled of getStarArray()"
+          [class.filled]="filled"
+          class="star"
+          >★</span
+        >
+      </div>
+      <span class="rating-value">{{ product.rating }}</span>
+    </div>
+
+    <!-- Likes Count -->
+    <div class="likes">
+      <span class="heart">❤</span>
+      <span class="likes-count">{{ likeCount() }}</span>
+    </div>
+
+    <!-- Price -->
+    <div class="price">{{ product.price | number: "1.0-0" }} ₸</div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <a
+        [href]="product.link"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        View on Kaspi.kz
+      </a>
+      <div class="share-buttons">
+        <button
+          (click)="shareOnWhatsApp()"
+          class="btn btn-share whatsapp"
+          aria-label="Share on WhatsApp"
+        >
+          <span class="icon">📱</span> WhatsApp
+        </button>
+        <button
+          (click)="shareOnTelegram()"
+          class="btn btn-share telegram"
+          aria-label="Share on Telegram"
+        >
+          <span class="icon">✈️</span> Telegram
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
