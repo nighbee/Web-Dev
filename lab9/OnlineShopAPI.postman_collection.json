@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "8a8a8a8a-8a8a-8a8a-8a8a-8a8a8a8a8a8a",
-		"name": "Online Shop API",
+		"name": "Online Shop API (Dynamic)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -10,6 +10,20 @@
 			"item": [
 				{
 					"name": "Get All Categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.length > 0) {",
+									"    pm.collectionVariables.set(\"active_category_id\", jsonData[0].id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -21,7 +35,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8000/api/categories/2/"
+						"url": "http://localhost:8000/api/categories/{{active_category_id}}/"
 					}
 				},
 				{
@@ -29,7 +43,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8000/api/categories/2/products/"
+						"url": "http://localhost:8000/api/categories/{{active_category_id}}/products/"
 					}
 				},
 				{
@@ -39,23 +53,10 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"New Category\"}",
+							"raw": "{\"name\": \"Dynamic Category\"}",
 							"options": {"raw": {"language": "json"}}
 						},
 						"url": "http://localhost:8000/api/categories/"
-					}
-				},
-				{
-					"name": "Update Category",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"name\": \"Updated Category\"}",
-							"options": {"raw": {"language": "json"}}
-						},
-						"url": "http://localhost:8000/api/categories/2/"
 					}
 				}
 			]
@@ -65,6 +66,20 @@
 			"item": [
 				{
 					"name": "Get All Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.length > 0) {",
+									"    pm.collectionVariables.set(\"active_product_id\", jsonData[0].id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -76,7 +91,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8000/api/products/6/"
+						"url": "http://localhost:8000/api/products/{{active_product_id}}/"
 					}
 				},
 				{
@@ -86,47 +101,23 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"New Product\",\n    \"price\": 99.99,\n    \"description\": \"Description\",\n    \"count\": 10,\n    \"is_active\": true,\n    \"category\": 2\n}",
+							"raw": "{\n    \"name\": \"New Dynamic Product\",\n    \"price\": 120.50,\n    \"description\": \"Test Product\",\n    \"count\": 15,\n    \"is_active\": true,\n    \"category\": {{active_category_id}}\n}",
 							"options": {"raw": {"language": "json"}}
 						},
 						"url": "http://localhost:8000/api/products/"
 					}
-				},
-				{
-					"name": "Update Product",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Updated Product\",\n    \"price\": 109.99,\n    \"description\": \"Updated Description\",\n    \"count\": 5,\n    \"is_active\": true,\n    \"category\": 2\n}",
-							"options": {"raw": {"language": "json"}}
-						},
-						"url": "http://localhost:8000/api/products/6/"
-					}
 				}
 			]
+		}
+	],
+	"variable": [
+		{
+			"key": "active_category_id",
+			"value": "1"
 		},
 		{
-			"name": "Cleanup (Deletes)",
-			"item": [
-				{
-					"name": "Delete Product",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "http://localhost:8000/api/products/6/"
-					}
-				},
-				{
-					"name": "Delete Category",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "http://localhost:8000/api/categories/2/"
-					}
-				}
-			]
+			"key": "active_product_id",
+			"value": "1"
 		}
 	]
 }

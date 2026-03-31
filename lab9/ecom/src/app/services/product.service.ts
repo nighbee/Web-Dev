@@ -50,6 +50,23 @@ export class ProductService {
     );
   }
 
+  fetchProductsByCategory(categoryId: number): void {
+    const url = categoryId === 0 
+      ? `${this.apiBaseUrl}/products/` 
+      : `${this.apiBaseUrl}/categories/${categoryId}/products/`;
+    
+    this.http.get<ApiProduct[]>(url).pipe(
+      map(products => products.map(product => this.toUiProduct(product)))
+    ).subscribe({
+      next: (products) => {
+        this.productsSignal.set(products);
+      },
+      error: (err) => {
+        console.error('Failed to fetch products by category', err);
+      }
+    });
+  }
+
   getProductById(id: number): Observable<Product> {
     return this.http.get<ApiProduct>(`${this.apiBaseUrl}/products/${id}/`).pipe(
       map(product => this.toUiProduct(product))
@@ -72,6 +89,7 @@ export class ProductService {
       link: product.kaspi_link || '#',
       categoryId: product.category,
       likes: 0,
+      count: product.count,
     };
   }
 
@@ -80,10 +98,7 @@ export class ProductService {
   }
 
   getProductsByCategory(categoryId: number): Product[] {
-    if (categoryId === 0) {
-      return this.productsSignal();
-    }
-    return this.productsSignal().filter(p => p.categoryId === categoryId);
+    return this.productsSignal();
   }
 
   getCategoryById(id: number): Category | undefined {

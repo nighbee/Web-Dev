@@ -1,0 +1,13 @@
+/* Empty stylesheet to resolve compile error */
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+.product-count {
+  color: #666;
+  font-size: 0.9rem;
+}

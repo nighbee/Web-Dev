@@ -10,4 +10,5 @@ export interface Product {
   link: string;
   categoryId: number;
   likes: number;
+  count: number;
 }

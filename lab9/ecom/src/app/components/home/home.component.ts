@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
 
   selectCategory(categoryId: number): void {
     this.selectedCategoryId.set(categoryId);
+    this.productService.fetchProductsByCategory(categoryId);
   }
 
   getSelectedCategoryName(): string {
