@@ -1,7 +1,7 @@
 import os
 import django
 
-# Set up Django environment
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shop_back.settings')
 django.setup()
 
@@ -27,8 +27,6 @@ def populate():
         category = Category.objects.create(name=name)
         category_objects[cid] = category
         print(f"Created category: {name}")
-
-    # Define products from db-product-list.md
     products_data = [
         # Smartphones
         {
@@ -241,7 +239,7 @@ def populate():
         )
         print(f"Created product: {p_data['name']}")
 
-    print(f"Successfully populated {Product.objects.count()} products across {Category.objects.count()} categories.")
+    print(f" populated {Product.objects.count()} products across {Category.objects.count()} categories.")
 
 if __name__ == '__main__':
     populate()
