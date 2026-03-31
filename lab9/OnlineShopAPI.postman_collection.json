@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "8a8a8a8a-8a8a-8a8a-8a8a-8a8a8a8a8a8a",
-		"name": "Online Shop API (Full Workflow)",
+		"name": "Online Shop API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -17,10 +17,7 @@
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"if (jsonData.length > 0) {",
-									"    // Get the first ID for retrieval/updates",
 									"    pm.collectionVariables.set(\"active_category_id\", jsonData[0].id);",
-									"    ",
-									"    // Get the last ID for deletions (per user request)",
 									"    pm.collectionVariables.set(\"last_category_id\", jsonData[jsonData.length - 1].id);",
 									"}"
 								],
@@ -62,6 +59,27 @@
 						},
 						"url": "http://localhost:8000/api/categories/"
 					}
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Updated Category\"}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": "http://localhost:8000/api/categories/{{active_category_id}}/"
+					}
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/api/categories/{{last_category_id}}/"
+					}
 				}
 			]
 		},
@@ -77,10 +95,7 @@
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"if (jsonData.length > 0) {",
-									"    // Get the first ID for general work",
 									"    pm.collectionVariables.set(\"active_product_id\", jsonData[0].id);",
-									"    ",
-									"    // Get the last ID for deletions (per user request)",
 									"    pm.collectionVariables.set(\"last_product_id\", jsonData[jsonData.length - 1].id);",
 									"}"
 								],
@@ -114,26 +129,26 @@
 						},
 						"url": "http://localhost:8000/api/products/"
 					}
-				}
-			]
-		},
-		{
-			"name": "Cleanup (Deletes)",
-			"item": [
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Product\",\n    \"price\": 109.99,\n    \"description\": \"Updated Description\",\n    \"count\": 5,\n    \"is_active\": true,\n    \"category\": {{active_category_id}}\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": "http://localhost:8000/api/products/{{active_product_id}}/"
+					}
+				},
 				{
 					"name": "Delete Product",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": "http://localhost:8000/api/products/{{last_product_id}}/"
-					}
-				},
-				{
-					"name": "Delete Category",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "http://localhost:8000/api/categories/{{last_category_id}}/"
 					}
 				}
 			]
