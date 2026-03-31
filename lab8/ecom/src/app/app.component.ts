@@ -29,7 +29,7 @@ export class AppComponent {
   }
 
   selectCategory(categoryId: number): void {
-    this.selectedCategoryId.set(categoryId);
+    this.productService.selectCategory(categoryId);
     this.router.navigate(['/']);
   }
 }

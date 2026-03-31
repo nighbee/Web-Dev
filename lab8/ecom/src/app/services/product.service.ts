@@ -50,6 +50,28 @@ export class ProductService {
     );
   }
 
+  fetchProductsByCategory(categoryId: number): void {
+    const url = categoryId === 0 
+      ? `${this.apiBaseUrl}/products/` 
+      : `${this.apiBaseUrl}/categories/${categoryId}/products/`;
+    
+    this.http.get<ApiProduct[]>(url).pipe(
+      map(products => products.map(product => this.toUiProduct(product)))
+    ).subscribe({
+      next: (products) => {
+        this.productsSignal.set(products);
+      },
+      error: (err) => {
+        console.error('Failed to fetch products by category', err);
+      }
+    });
+  }
+
+  selectCategory(categoryId: number): void {
+    this.selectedCategoryId.set(categoryId);
+    this.fetchProductsByCategory(categoryId);
+  }
+
   private toUiProduct(product: ApiProduct): Product {
     return {
       id: product.id,
@@ -74,10 +96,7 @@ export class ProductService {
   }
 
   getProductsByCategory(categoryId: number): Product[] {
-    if (categoryId === 0) {
-      return this.productsSignal();
-    }
-    return this.productsSignal().filter(p => p.categoryId === categoryId);
+    return this.productsSignal();
   }
 
   getCategoryById(id: number): Category | undefined {
